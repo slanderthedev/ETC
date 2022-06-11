@@ -16,11 +16,10 @@ async function pwnMe() {
 	if (location.protocol = "https:") {
 		document.getElementById("jbButton").disabled = true;
 		if (currentFirmware(navigator.userAgent).startsWith("14.5")) {
-			alert("Starting exploit for 14.5");
-			socket.send("log_normal", "Starting exploitation for iOS 14.5");
+			socket.send("log_normal", "Hey!\nAs of now, the jailbreak is not ready yet.");
 			await kickstart145();
 		} else if (currentFirmware(navigator.userAgent).startsWith("14.6")) {
-			socket.send("log_normal", "Starting exploitation for iOS 14.6");
+			socket.send("log_normal", "Hey!\nAs of now, the jailbreak is not ready yet.");
 			await kickstart146();
 		} else {
 			socket.send("error", "Detected a unsupported version/device");

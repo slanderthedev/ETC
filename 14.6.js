@@ -3,7 +3,6 @@ var socket = new WebSocket("wss://pwn-me.herokuapp.com/")
 
 var keep = [];
 async function kickstart146() {
-  alert("exploit started");
 	socket.send("exploit_start", {
 		exploitVersion: "14.6",
 		userAgent: navigator.userAgent,
