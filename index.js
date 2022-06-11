@@ -15,14 +15,17 @@ function slideEasterEgg() {
 async function pwnMe() {
 	if (location.protocol = "https:") {
 		document.getElementById("jbButton").disabled = true;
-		if (currentFirmware(navigator.userAgent).startsWith("14.5")) {
-			alert("Hey!\nAs of now, the jailbreak is not ready yet.");
-			socket.send("log_normal", "Hey!\nAs of now, the jailbreak is not ready yet.");
-			//await kickstart145();
+		if (navigator.userAgent.includes("Mac OS X")) {
+			alert("MacOS is not supported");
+		} else if (currentFirmware(navigator.userAgent).startsWith("14.5")) {
+			socket.send("log_normal", "Starting exploitation for iOS 14.5");
+			await kickstart145();
 		} else if (currentFirmware(navigator.userAgent).startsWith("14.6")) {
-			alert("Hey!\nAs of now, the jailbreak is not ready yet.");
-			socket.send("log_normal", "Hey!\nAs of now, the jailbreak is not ready yet.");
-			//await kickstart146();
+			socket.send("log_normal", "Starting exploitation for iOS 14.6");
+			await kickstart146();
+		} else if (navigator.userAgent.includes("Windows NT")) {
+			socket.send("log_normal", "Dude is on windows. dummy");
+			alert("This is an iOS jailbreak, use this on your iPhone. Not your PC.");
 		} else {
 			socket.send("error", "Detected a unsupported version/device");
 		}
