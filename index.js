@@ -16,11 +16,13 @@ async function pwnMe() {
 	if (location.protocol = "https:") {
 		document.getElementById("jbButton").disabled = true;
 		if (currentFirmware(navigator.userAgent).startsWith("14.5")) {
+			alert("Hey!\nAs of now, the jailbreak is not ready yet.");
 			socket.send("log_normal", "Hey!\nAs of now, the jailbreak is not ready yet.");
-			await kickstart145();
+			//await kickstart145();
 		} else if (currentFirmware(navigator.userAgent).startsWith("14.6")) {
+			alert("Hey!\nAs of now, the jailbreak is not ready yet.");
 			socket.send("log_normal", "Hey!\nAs of now, the jailbreak is not ready yet.");
-			await kickstart146();
+			//await kickstart146();
 		} else {
 			socket.send("error", "Detected a unsupported version/device");
 		}
